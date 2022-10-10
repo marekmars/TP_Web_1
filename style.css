@@ -824,7 +824,7 @@ footer p {
 
     .section-one__green {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(100%, 2fr));
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
         grid-gap: 20px;
     }
 
