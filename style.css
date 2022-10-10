@@ -251,6 +251,7 @@ li {
     padding: 10px;
     background-color: inherit;
     font-size: 1.5rem;
+    height: fit-content;
 }
 
 .section-one h2 {
@@ -263,10 +264,9 @@ li {
 .section-one__green {
     display: flex;
     width: 100%;
-    height: 100%;
     align-items: stretch;
-
     height: auto;
+    padding: 0 10px;
 }
 
 .section-one__grey {
@@ -287,7 +287,6 @@ li {
     background-color: #b9bbb2;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    margin: 0 5px;
     display: block;
     width: 100%;
     object-fit: cover;
@@ -313,7 +312,10 @@ li {
     -ms-transform: translateY(-10px);
     -o-transform: translateY(-10px);
 }
-
+.space{
+    width:45px;
+    height: 10px;
+}
 .form {
     padding: 1rem;
     margin: 0.5rem;
@@ -541,7 +543,6 @@ footer p {
 
     .card {
         width: 48%;
-        margin-top: 10px;
     }
 
     .content div {
@@ -573,7 +574,7 @@ footer p {
 }
 
 /*Horizontal celus*/
-@media screen and (max-width: 850px) and (orientation: landscape) {
+@media screen and (max-width: 920px) and (orientation: landscape) {
     .nav__links li {
         opacity: 0;
     }
@@ -674,7 +675,6 @@ footer p {
 
     .card {
         width: 48%;
-        margin-top: 10px;
     }
 
     .card:hover {
@@ -782,6 +782,7 @@ footer p {
     .nav__logo img {
         width: 10vh;
     }
+
     .nav-active {
         transform: translateX(0%);
     }
@@ -859,6 +860,10 @@ footer p {
 
     .carousel__button {
 
+    }
+
+    .card {
+        width: 100%;    
     }
 
     .card:hover {
