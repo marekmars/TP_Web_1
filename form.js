@@ -8,7 +8,7 @@ const form = document.getElementById("formu");
 const error = document.getElementsByClassName("error");
 const okIcon = document.getElementsByClassName("fa-circle-check");
 const wrongIcon = document.getElementsByClassName("fa-circle-xmark");
-let flag = true;
+let flag = false;
 
 const errorMsg = [
     "El nombre no puede superara los 30 caracteres",
