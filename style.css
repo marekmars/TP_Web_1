@@ -265,6 +265,7 @@ li {
     display: flex;
     width: 100%;
     align-items: stretch;
+    justify-content:space-between;
     height: auto;
     padding: 0 10px;
 }
@@ -272,6 +273,7 @@ li {
 .section-one__grey {
     display: flex;
     flex-direction: row;
+    justify-content:space-around;
     background-color: #d9d9d9;
 }
 
@@ -288,14 +290,12 @@ li {
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: block;
-    width: 100%;
-    object-fit: cover;
+    width: 300px;
     object-position: center;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     -o-border-radius: 10px;
-    align-self: stretch;
 }
 
 .card__text {
@@ -670,11 +670,14 @@ footer p {
 
     .section-one__green {
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
+    }
+    .card__middle{
+        margin-top: 17px;
     }
 
     .card {
-        width: 48%;
+        width: 49%;
     }
 
     .card:hover {
@@ -820,8 +823,10 @@ footer p {
     }
 
     .section-one__green {
-        flex-wrap: wrap;
-        max-width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100%, 2fr));
+        grid-auto-rows: 100%;
+        grid-gap: 20px;
     }
 
     .section-one__no-index {
@@ -857,13 +862,8 @@ footer p {
     .carousel__track img {
         width: 70vh;
     }
-
-    .carousel__button {
-
-    }
-
     .card {
-        width: 100%;    
+        width: 100%;
     }
 
     .card:hover {
