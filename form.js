@@ -25,12 +25,12 @@ let verificationOk = (i) => {
     flag = true;
 };
 
-let verificationEmpty = () => {
+let verificationEmpty = (x) => {
     arrayForm.forEach((element, i) => {
         if (element.value === "") {
             okIcon[i].style.opacity = "0";
             wrongIcon[i].style.opacity = "0";
-            error[i].innerText = errorMsg[4];
+            error[i].innerText = x;
             flag = false;
         }
     });
@@ -67,13 +67,14 @@ form.addEventListener("change", (e) => {
     } else {
         verificationOk(1);
     }
-
-    verificationEmpty();
+    let x = "";
+    verificationEmpty(x);
     console.log(flag);
 });
 
 form.addEventListener("submit", (e) => {
     if (!flag) {
+        verificationEmpty(errorMsg[4]);
         console.log("Error");
         e.preventDefault();
     }
