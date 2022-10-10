@@ -667,9 +667,7 @@ footer p {
         width: 100%;
         margin-top: 10vh;
     }
-    .carousel__indicators{
 
-    }
     .section-one__green {
         flex-wrap: wrap;
         justify-content: center;
@@ -678,7 +676,6 @@ footer p {
         width: 48%;
         margin-top: 10px;
     }
-    
 
     .form {
         width: 200vh;
@@ -696,15 +693,12 @@ footer p {
     .section-one__text{
         font-size: 1rem;
     }
+
     .carousel__button {
-        transform: scale(70%);
-        object-position: center;
-        top: 40%;
-        background-color:red;
-        -webkit-transform: scale(50%);
-        -moz-transform: scale(50%);
-        -ms-transform: scale(50%);
-        -o-transform: scale(50%);
+        height: 25px;
+        width: 25px;
+        line-height: 25px;
+        font-size: 2rem;
     }
 
     .carousel__indicators {
