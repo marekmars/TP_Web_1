@@ -1,85 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	  <meta charset="UTF-8">
-	  <meta content="width=device-width, initial-scale=1" name="viewport"/>
-	  <title>Boûlan™ Conocenos</title>
-	  <link rel="stylesheet" href="style.css">
-	  <link rel="preconnect" href="https://fonts.googleapis.com">
-	  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Montserrat:wght@100&display=swap"
-			rel="stylesheet">
-	  <script src="https://kit.fontawesome.com/a5eb905d06.js" crossorigin="anonymous"></script>
-	  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-</head>
-<body>
-<header class="P-heading">
-	  <nav>
-			<div class="nav__logoC">
-				  <a href="Index.html" class="nav__logoC"> <img src="img/boulan-logo.png" alt="Logo"></a>
-			</div>
-			<ul class="nav__links">
-				  <li class="link"><a href="/Index.html">Home</a></li>
-				  <li class="link"><a href="/Conocenos.html">Conocenos</a></li>
-				  <li class="nav__logo"><a href="/Index.html"><img src="img/boulan-logo.png" alt="logo"></a></li>
-				  <li class="link"><a href="#end">Visitanos</a></li>
-				  <li class="link"><a href="/Contacto.html">Contacto</a></li>
-			</ul>
-			<div class="nav__burger">
-				  <div class="line1">
-				  </div>
-				  <div class="line2">
-				  </div>
-				  <div class="line3">
-				  </div>
-			</div>
-	  </nav>
-</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>Boûlan™ Conocenos</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500;600;700&family=Montserrat:wght@100&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/a5eb905d06.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <header class="P-heading">
+      <nav>
+        <div class="nav__logoC">
+          <a href="Index.html" class="nav__logoC">
+            <img src="img/roullier-logo-no-background.png" alt="Logo"
+          /></a>
+        </div>
+        <ul class="nav__links">
+          <li class="link"><a href="/Index.html">Home</a></li>
+          <li class="link"><a href="/Conocenos.html">Conocenos</a></li>
+          <li class="nav__logo">
+            <a href="/Index.html"
+              ><img src="img/roullier-logo-no-background.png" alt="logo"
+            /></a>
+          </li>
+          <li class="link"><a href="#end">Visitanos</a></li>
+          <li class="link"><a href="/Contacto.html">Contacto</a></li>
+        </ul>
+        <div class="nav__burger">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+      </nav>
+    </header>
 
-<main>
-	  <section class="section-one section-one__no-index" id="start">
-				  <img src="img/contacto.jpg" alt="Contact Pic" class="section-one">
-				  <h1>CONTACTO</h1>
-				  <h2>Recordá que es conveniente hacer tu pedido con anticipación</h2>
-				  <div class="section-one__green section-one__grey contacto">
-							  <form action="" method="post">
-									<ul class="section-one__grey__form">
-										  <li><input type="text" id="name" name="user_name" placeholder="Nombre"
-													 class="form"></li>
-										  <li><input type="email" id="email" name="user_name" placeholder="Email"
-													 class="form"></li>
-										  <li><input type="text" id="phone" name="user_name"
-													 placeholder="Numero Telefonico" class="form"></li>
-										  <li><textarea id="msg" name="user_message" placeholder="Su Mensaje"
-														class="form area"></textarea></li>
-										  <li><button class="form btn"><img src="img/btnEnviar.png" alt=""></button></li>
-									</ul>
-							  </form>
-				  </div>
-	  </section>
-</main>
+    <main>
+      <section class="section-one section-one__no-index" id="start">
+        <img src="img/contacto.jpg" alt="Contact Pic" class="section-one" />
+        <div class="section-one__text"><h1>CONTACTO</h1></div>
+        <h2>Recordá que es conveniente hacer tu pedido con anticipación</h2>
+        <div class="section-one__green section-one__grey contacto">
+          <form action="" method="get" id="formu">
+            <ul class="section-one__grey__form">
+              <li>
+                <input
+                  type="text"
+                  id="name"
+                  name="user_name"
+                  placeholder="Nombre"
+                  class="form"
+                  required
+                />
+                <i class="fa-regular fa-circle-xmark okIcon"></i>
+                <i class="fa-regular fa-circle-check wrongIcon"></i>
+              </li>
+              <li id="error" class="error"></li>
+              <li>
+                <input
+                  type="email"
+                  id="email"
+                  name="user_name"
+                  placeholder="Email"
+                  class="form"
+                  required
+                />
+                <i class="fa-regular fa-circle-xmark"></i>
+                <i class="fa-regular fa-circle-check"></i>
+              </li>
+              <li id="error" class="error"></li>
 
-<footer class="Footer container">
-	  <div class="footer__contact">
-			<ul>
-				  <li>Ven a visitarnos</li>
-				  <li>Dirección: Calle Inventada 123 en CABA</li>
-				  <li>De 7hs - 19 hs todos los días</li>
-				  <li>Contacto: boulan@gmail.com</li>
-				  <li><a href=""><i class="fa-brands fa-whatsapp fa-xl"></i></a><a href=""><i
-						  class="fa-brands fa-instagram fa-xl"></i></a>
-						<a href=""> <i class="fa-brands fa-facebook-f fa-xl"></i></a> <a href=""><i
-								class="fa-brands fa-pinterest-p fa-xl"></i></a></li>
-			</ul>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105089.18487951913!2d-58.51975535823997!3d-34.603225189045624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb579510de101%3A0x88c0b776a1d90a3b!2zQm_Du2xhbg!5e0!3m2!1ses-419!2sar!4v1664682554172!5m2!1ses-419!2sar"
-					width="400" height="200" style="border:0;" allowfullscreen="" loading="lazy"
-					referrerpolicy="no-referrer-when-downgrade"></iframe>
-	  
-	  </div>
-	  <p id="end">Copyright © 2022 Boûlan</p>
+              <li>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="user_name"
+                  placeholder="Numero Telefonico"
+                  class="form"
+                  required
+                />
+                <i class="fa-regular fa-circle-xmark"></i>
+                <i class="fa-regular fa-circle-check"></i>
+              </li>
+              <li id="error" class="error"></li>
 
-</footer>
+              <li>
+                <textarea
+                  id="msg"
+                  name="user_message"
+                  placeholder="Su Mensaje"
+                  class="form area"
+                  required
+                ></textarea>
+                <i class="fa-regular fa-circle-xmark"></i>
+                <i class="fa-regular fa-circle-check"></i>
+              </li>
+              <li id="error" class="error"></li>
+              <li></li>
+              <button id="submit" class="form btn" type="submit">Enviar</button>
+            </ul>
+          </form>
+        </div>
+      </section>
+    </main>
 
-<script src="app.js"></script>
-</body>
+    <footer class="Footer container">
+      <div class="footer__contact">
+        <ul>
+          <li>Ven a visitarnos</li>
+          <li>Dirección: Calle Inventada 123 en CABA</li>
+          <li>De 7hs - 19 hs todos los días</li>
+          <li>Contacto: boulan@gmail.com</li>
+          <li>
+            <a href=""><i class="fa-brands fa-whatsapp fa-xl"></i></a
+            ><a href=""><i class="fa-brands fa-instagram fa-xl"></i></a>
+            <a href=""> <i class="fa-brands fa-facebook-f fa-xl"></i></a>
+            <a href=""><i class="fa-brands fa-pinterest-p fa-xl"></i></a>
+          </li>
+        </ul>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105089.18487951913!2d-58.51975535823997!3d-34.603225189045624!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb579510de101%3A0x88c0b776a1d90a3b!2zQm_Du2xhbg!5e0!3m2!1ses-419!2sar!4v1664682554172!5m2!1ses-419!2sar"
+          width="400"
+          height="200"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+      <p id="end">Copyright © 2022 Boûlan</p>
+    </footer>
+    <script src="app.js"></script>
+    <script src="form.js"></script>
+  </body>
 </html>
