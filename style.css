@@ -573,7 +573,7 @@ footer p {
 }
 
 /*Horizontal celus*/
-@media screen and (max-width: 750px) and (orientation: landscape) {
+@media screen and (max-width: 800px) and (orientation: landscape) {
     .nav__links li {
         opacity: 0;
     }
