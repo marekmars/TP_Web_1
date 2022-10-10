@@ -632,8 +632,7 @@ footer p {
     .nav__logo img {
         width: 10vh;
     }
-
-
+    
     .nav-active {
         transform: translateX(0%);
     }
@@ -675,7 +674,9 @@ footer p {
         width: 48%;
         margin-top: 10px;
     }
-
+    .card:hover {
+        transform: translateY(0px);
+    }
     .form {
         width: 200vh;
         font-size: 1.125rem;
