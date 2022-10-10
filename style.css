@@ -250,7 +250,7 @@ li {
     text-align: center;
     padding: 10px;
     background-color: inherit;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     height: fit-content;
 }
 
@@ -290,7 +290,7 @@ li {
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     display: block;
-    width: 300px;
+    width: 49vh;
     object-position: center;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -337,9 +337,10 @@ li {
     justify-content: center;
     background: #b9bbb2;
     cursor: pointer;
-    width: 10rem;
-    height: fit-content;
+    width: 8rem;
+    height: 3rem;
     font-size: 1.5rem;
+    line-height: 0.9rem;
     text-align: center;
     border-radius: 50px;
     border: 2px solid #b9bbb2;
@@ -350,12 +351,11 @@ li {
     margin-bottom: 20px;
     cursor: pointer;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: all 0.1s ease;
 
 }
 
-.form.btm:hover {
-    transform: scale(120%);
+.form.btn:hover {
+    background: #1B5D3F;
 }
 
 section img {
@@ -830,6 +830,7 @@ footer p {
 
     .section-one__no-index {
         margin-top: 7vh;
+        
     }
 
     .footer__contact ul {
@@ -859,7 +860,7 @@ footer p {
     }
 
     .carousel__track img {
-        width: 70vh;
+        width: 100vh;
     }
     .card {
         width: 100%;
