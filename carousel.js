@@ -15,9 +15,7 @@ const carouselSlide = () => {
             slidePosition = totalSlides;
         } else {
             slidePosition--;
-        }
-        slides[slidePosition].classList.remove("animacionDerecha");
-        slides[slidePosition].classList.add("animacionIzquierda");
+        };
         moveSlide();
     })
     //mover slides para atras
@@ -27,8 +25,6 @@ const carouselSlide = () => {
         } else {
             slidePosition++;
         }
-        slides[slidePosition].classList.remove("animacionIzquierda");
-        slides[slidePosition].classList.add("animacionDerecha");
         moveSlide();
     })
 //cambio de clase
@@ -42,6 +38,7 @@ const carouselSlide = () => {
             dot.classList.remove("carousel__indicator__active");
             carouselIndicators[slidePosition].classList.add("carousel__indicator__active");
         }
+        slides[slidePosition].classList.add("slideAnimation");
     }
     //cambio de clase indicadores + accion botones de los mismos
     const carouselIndicatorsClick = () => {
@@ -52,14 +49,6 @@ const carouselSlide = () => {
                 let current=slidePosition;
                 //se le asigna el valor de i del boton apretado a slideposition
                 slidePosition=i;
-                //colocando animacion dependiento del lado q este el indicador de destino
-                if(current>slidePosition){
-                    slides[slidePosition].classList.remove("animacionIzquierda");
-                    slides[slidePosition].classList.add("animacionDerecha");
-                }else if(current<slidePosition) {
-                    slides[slidePosition].classList.remove("animacionDerecha");
-                    slides[slidePosition].classList.add("animacionIzquierda");
-                }
                 moveSlide();
             })
         }

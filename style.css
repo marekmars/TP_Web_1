@@ -149,33 +149,19 @@ li {
     display: block;
 }
 
-.animacionDerecha {
-    animation: slideChangeR 1s;
+.slideAnimation {
+    animation: slide 1.5s;
 }
 
-.animacionIzquierda {
-    animation: slideChangeL 1s;
-}
 
-@keyframes slideChangeL {
+@keyframes slide {
     from {
         opacity: 0;
-        transform: translateX(1900px);
+
     }
     to {
         opacity: 1;
-        transform: translateX(0px);
-    }
-}
 
-@keyframes slideChangeR {
-    from {
-        opacity: 0;
-        transform: translateX(-1900px);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(0px);
     }
 }
 
