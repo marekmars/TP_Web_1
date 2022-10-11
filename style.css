@@ -597,6 +597,7 @@ footer p {
 }
 
 /*Vertical celus*/
+/*
 @media (max-width: 767px){
     .nav__links li {
         opacity: 0;
@@ -784,3 +785,4 @@ footer p {
         text-align: justify;
     }
 }
+*/
