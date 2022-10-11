@@ -612,7 +612,9 @@ footer p {
     .footer__contact {
         flex-wrap: wrap;
     }
-
+    .section-one__no-index {
+        margin-top: 10vh;
+    }
 
 }
 
@@ -759,7 +761,7 @@ footer p {
         text-align: justify;
     }
     .section-one__no-index {
-        margin-top: 7vh;
+        margin-top: 10vh;
         
     }
 
