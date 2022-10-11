@@ -596,9 +596,9 @@ footer p {
     .section-one__grey__form{
         flex-flow: row nowrap;
     }
-    .section-one__grey{
-        flex-flow: column wrap;
 
+    .contact{
+        flex-flow: column wrap;
     }
     .section__col{
         width: 50%;
