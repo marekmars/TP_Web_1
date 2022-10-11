@@ -555,8 +555,6 @@ footer p {
         margin: auto 0.3rem;
     }
 
-
-
     .section-one__green {
         display:flex;
         flex-wrap: wrap;
@@ -592,7 +590,13 @@ footer p {
         font-size: 1rem;
     }
     .section-one__grey{
-        flex-flow: column wrap;
+        flex-flow: row nowrap;
+
+    }
+    .section__col{
+        width: 50%;
+        padding:10px;
+        text-align: justify;
     }
 
 }
@@ -734,7 +738,11 @@ footer p {
         flex-flow: column wrap;
 
     }
-
+    .section__col{
+        width: 100%;
+        padding:10px;
+        text-align: justify;
+    }
     .section-one__no-index {
         margin-top: 7vh;
         
@@ -780,9 +788,5 @@ footer p {
         font-size: 1rem;
     }
 
-    .section__col{
-        width: 100%;
-        padding:10px;
-        text-align: justify;
-    }
+
 }
