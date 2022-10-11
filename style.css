@@ -56,6 +56,7 @@ select {
 /*FIN RESET*/
 
 /*Estilo nav*/
+
 .nav__logo {
     display: flex;
     position: relative;
@@ -432,7 +433,7 @@ footer p {
 
 
 /*Horizontal celus-tablet */
-@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
     .nav__links li {
         opacity: 0;
     }
@@ -596,7 +597,7 @@ footer p {
 }
 
 /*Vertical celus*/
-@media (min-width: 481px) and (max-width: 767px){
+@media (max-width: 480px){
     .nav__links li {
         opacity: 0;
     }
@@ -689,7 +690,7 @@ footer p {
         height: fit-content;
     }
     .carousel__track img {
-        width: 100vh;
+        width: 100%;
     }
     .carousel__button--next {
         right: 0.5rem;
