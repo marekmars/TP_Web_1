@@ -433,7 +433,7 @@ footer p {
 
 
 /*Horizontal celus-tablet */
-@media (min-width: 481px) and (max-width: 1024px) and (orientation: landscape) {
+@media (min-width: 768px) and (max-width: 1080px) and (orientation: landscape) {
     .nav__links li {
         opacity: 0;
     }
@@ -597,7 +597,7 @@ footer p {
 }
 
 /*Vertical celus*/
-@media (max-width: 480px){
+@media (max-width: 767px){
     .nav__links li {
         opacity: 0;
     }
