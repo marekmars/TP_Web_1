@@ -315,7 +315,7 @@ li {
     padding: 1rem;
     margin: 0.5rem;
     font-size: 1.125rem;
-    width: 100vh;
+    width: 90%;
     border-radius: 10px;
     border: none;
     -webkit-border-radius: 10px;
@@ -571,12 +571,16 @@ footer p {
     .card:hover {
         transform: translateY(0px);
     }
-
-    .form {
-        width: 200vh;
-        font-size: 1.125rem;
-        align-content: center;
-    }
+     .contacto{
+         flex-direction: column;
+         justify-content:center;
+         background-color: #d9d9d9;
+         flex-flow: column nowrap;
+     }
+     .form {
+         font-size: 1.125rem;
+         align-content: center;
+     }
 
     .form.area {
         height: 30vh;
@@ -589,9 +593,8 @@ footer p {
     .section-one__text {
         font-size: 1rem;
     }
-    .section-one__grey{
+    .section-one__grey__form{
         flex-flow: row nowrap;
-
     }
     .section__col{
         width: 50%;
@@ -757,7 +760,7 @@ footer p {
     }
 
     .form {
-        width: 40vh;
+        width: 90%;
         font-size: 1.125rem;
         align-content: center;
     }
