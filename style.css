@@ -433,7 +433,7 @@ footer p {
 
 
 /*Horizontal celus-tablet */
-@media (min-width: 501px) and (max-width: 1081px) {
+@media (min-width: 501px) and (max-width: 1023px) {
     .nav__links li {
         opacity: 0;
     }
