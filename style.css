@@ -601,6 +601,13 @@ footer p {
         padding:10px;
         text-align: justify;
     }
+    .footer__contact ul {
+        padding-bottom: 20px;
+    }
+
+    .footer__contact {
+        flex-wrap: wrap;
+    }
 
 }
 
