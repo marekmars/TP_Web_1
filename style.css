@@ -433,7 +433,7 @@ footer p {
 
 
 /*Horizontal celus-tablet */
-@media (min-width: 500px) and (max-width: 1081px) {
+@media (min-width: 501px) and (max-width: 1081px) {
     .nav__links li {
         opacity: 0;
     }
@@ -597,8 +597,7 @@ footer p {
 }
 
 /*Vertical celus*/
-/*
-@media (max-width: 767px){
+@media (max-width: 500px){
     .nav__links li {
         opacity: 0;
     }
@@ -785,4 +784,3 @@ footer p {
         text-align: justify;
     }
 }
-*/
