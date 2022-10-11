@@ -608,7 +608,9 @@ footer p {
     .footer__contact ul {
         padding-bottom: 20px;
     }
-
+     .section-one__grey p,h4{
+             margin-bottom: 10px;
+     }
     .footer__contact {
         flex-wrap: wrap;
     }
