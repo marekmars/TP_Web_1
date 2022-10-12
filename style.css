@@ -225,6 +225,7 @@ li {
 .section-one {
     margin: 0;
     display: block;
+    margin-top: 20vh;
     justify-content: space-evenly;
     background-color: inherit;
     height: fit-content;
@@ -600,7 +601,7 @@ footer p {
     .footer__contact {
         flex-wrap: wrap;
     }
-    .section-one__no-index {
+    .section-one{
         margin-top: 10vh;
     }
 
