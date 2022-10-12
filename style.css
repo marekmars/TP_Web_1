@@ -120,11 +120,12 @@ li {
 
 /*Carousel Style*/
 .carousel {
+    display: flex;
+    height: fit-content;
     max-width: 100vw;
-    height: 100vh;
     overflow: hidden;
     position: relative;
-    margin-top: 19vh;
+    margin-top: 20vh;
     background-color: #d9d9d9;
 }
 
@@ -212,7 +213,7 @@ li {
     margin: auto 0.5rem;
     border: none;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
 
@@ -225,14 +226,15 @@ li {
 .section-one {
     margin: 0;
     display: block;
-    margin-top: 20vh;
     justify-content: space-evenly;
     background-color: inherit;
     height: fit-content;
     text-align: center;
     align-items: center;
 }
-
+.section-one__no-index {
+    margin-top: 20vh;
+}
 .section-one__text {
     text-align: center;
     padding: 10px;
@@ -509,9 +511,7 @@ footer p {
     }
 
     .carousel {
-        display: flex;
-        margin-top: 0;
-        height: fit-content;
+        margin-top: 10vh;
     }
     .carousel__track img {
         width: 100%;
@@ -524,7 +524,7 @@ footer p {
         left: 0.5rem;
     }
     .carousel__button {
-        top: 60%;
+        top: 50%;
         height: 35px;
         width: 35px;
         line-height: 35px;
@@ -601,7 +601,7 @@ footer p {
     .footer__contact {
         flex-wrap: wrap;
     }
-    .section-one{
+    .section-one__no-index {
         margin-top: 10vh;
     }
 
@@ -684,12 +684,10 @@ footer p {
 
     .carousel {
         display: flex;
-        margin-top: 0;
+        margin-top: 10vh;
         height: fit-content;
     }
-    .carousel__track img {
-        width: 100%;
-    }
+    
     .carousel__button--next {
         right: 0.5rem;
     }
@@ -715,11 +713,10 @@ footer p {
         height: 0.5rem;
         margin: auto 0.1rem;
     }
-
-    .section-one {
-        margin: 0;
+    .section-one__no-index {
+        margin-top: 10vh;
     }
-
+    
     .section-one__green {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
@@ -728,16 +725,11 @@ footer p {
     }
     .section-one__grey{
         flex-flow: column wrap;
-
     }
     .section__col{
         width: 100%;
         padding:10px;
         text-align: justify;
-    }
-    .section-one__no-index {
-        margin-top: 10vh;
-        
     }
 
     .footer__contact ul {
@@ -761,11 +753,6 @@ footer p {
         width: 7rem;
     }
 
-    .primary-heading {
-        margin-top: 7vh;
-    }
-
-
     .card {
         width: 100%;
     }
@@ -773,7 +760,6 @@ footer p {
     .card:hover {
         transform: translateY(0);
     }
-
 
     .section-one__text {
         font-size: 1rem;
