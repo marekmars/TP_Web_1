@@ -68,7 +68,7 @@ form.addEventListener("change", (e) => {
         verificationOk(1);
     }
     if  (arrayForm[3].value.length>300)  {
-        error[3].innerText = errorMsg[3];
+        verificationWrong(3);
     }else{
         verificationOk(3);
     }
