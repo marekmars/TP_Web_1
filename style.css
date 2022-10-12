@@ -128,8 +128,7 @@ li {
     background-color: #d9d9d9;
 }
 
-.carousel__img,
-.carousel__img-hidden {
+.carousel__img{
     display: none;
 }
 

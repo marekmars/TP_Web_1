@@ -31,13 +31,12 @@ const carouselSlide = () => {
     function moveSlide() {
         for (let slide of slides) {
             slide.classList.remove("carousel__img-visible");
-            slide.classList.add("carousel__img-hidden");
-            slides[slidePosition].classList.add("carousel__img-visible");
         }
         for (let dot of carouselIndicators) {
             dot.classList.remove("carousel__indicator__active");
-            carouselIndicators[slidePosition].classList.add("carousel__indicator__active");
         }
+        carouselIndicators[slidePosition].classList.add("carousel__indicator__active");
+        slides[slidePosition].classList.add("carousel__img-visible");
         slides[slidePosition].classList.add("slideAnimation");
     }
     //cambio de clase indicadores + accion botones de los mismos
