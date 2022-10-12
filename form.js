@@ -14,7 +14,7 @@ const errorMsg = [
     "El nombre no puede superara los 30 caracteres",
     "Ingrese un mail correcto",
     "Ingrese un numero correcto",
-    "El mensaje no puede superara los 150 caracteres",
+    "El mensaje no puede superara los 300 caracteres",
     "El campo no puede estar vacio"
 ];
 
@@ -45,7 +45,7 @@ let verificationWrong = (i) => {
 
 form.addEventListener("change", (e) => {
 
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 3; i++) {
         if (arrayForm[i].value.length > 30) {
             verificationWrong(i);
         } else {
@@ -67,15 +67,20 @@ form.addEventListener("change", (e) => {
     } else {
         verificationOk(1);
     }
+    if  (arrayForm[3].value.length>300)  {
+        error[3].innerText = errorMsg[3];
+    }else{
+        verificationOk(3);
+    }
     let x = "";
     verificationEmpty(x);
-    console.log(flag);
+/*    console.log(flag);*/
 });
 
 form.addEventListener("submit", (e) => {
     if (!flag) {
         verificationEmpty(errorMsg[4]);
-        console.log("Error");
+ /*       console.log("Error");*/
         e.preventDefault();
     }
 });
