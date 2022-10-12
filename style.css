@@ -433,9 +433,6 @@ footer p {
 
 /*Horizontal celus-tablet */
 @media (min-width: 501px) and (max-width: 1023px) {
-    .nav__links li {
-        opacity: 0;
-    }
 
     .nav__links {
         display: flex;
@@ -498,16 +495,6 @@ footer p {
         transform: translateX(0%);
     }
 
-    @keyframes navLinkFade {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0px);
-        }
-    }
     .animateB .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
     }
@@ -621,9 +608,6 @@ footer p {
 
 /*Vertical celus*/
 @media (max-width: 500px){
-    .nav__links li {
-        opacity: 0;
-    }
 
     .nav__links {
         display: flex;
@@ -684,17 +668,6 @@ footer p {
 
     .nav-active {
         transform: translateX(0%);
-    }
-
-    @keyframes navLinkFade {
-        from {
-            opacity: 0;
-            transform: translateX(50px);
-        }
-        to {
-            opacity: 1;
-            transform: translateX(0px);
-        }
     }
     .animateB .line1 {
         transform: rotate(-45deg) translate(-5px, 6px);
