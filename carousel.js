@@ -27,6 +27,16 @@ const carouselSlide = () => {
         }
         moveSlide();
     })
+    //cambio de clase indicadores + accion botones de los mismos
+    const carouselIndicatorsClick = () => {
+        for (let i = 0; i <dots.length ; i++) {
+            dots[i].addEventListener("click", evt => {
+                //se le asigna el valor de i del boton apretado a slideposition
+                slidePosition=i;
+                moveSlide();
+            })
+        }
+    }
 //cambio de clase
     function moveSlide() {
         for (let slide of slides) {
@@ -39,19 +49,7 @@ const carouselSlide = () => {
         slides[slidePosition].classList.add("carousel__img-visible");
         slides[slidePosition].classList.add("slideAnimation");
     }
-    //cambio de clase indicadores + accion botones de los mismos
-    const carouselIndicatorsClick = () => {
-        for (let i = 0; i <dots.length ; i++) {
-            dots[i].addEventListener("click", evt => {
-                /*console.log("current "+slidePosition)*/
-                /*console.log("taret "+i);*/
-                let current=slidePosition;
-                //se le asigna el valor de i del boton apretado a slideposition
-                slidePosition=i;
-                moveSlide();
-            })
-        }
-    }
+
     carouselIndicatorsClick();
 }
 carouselSlide();
