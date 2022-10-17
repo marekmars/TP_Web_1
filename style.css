@@ -333,9 +333,10 @@ li {
     height: 30vh;
 }
 
-.form.btn {
+.form__btn {
     justify-content: center;
     background: #b9bbb2;
+    color: #1B5D3F;
     cursor: pointer;
     width: 8rem;
     height: 3rem;
@@ -354,8 +355,9 @@ li {
 
 }
 
-.form.btn:hover {
-    background: #1B5D3F;
+.form__btn:hover {
+    background: darkolivegreen;
+    color: #b9bbb2;
 }
 
 section img {
