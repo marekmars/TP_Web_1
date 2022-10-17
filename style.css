@@ -168,31 +168,32 @@ li {
     }
 }
 
-.carousel__button {
-    justify-content: center;
-    object-position: center;
-    font-weight: bold;
-    height: 40px;
-    width: 40px;
-    line-height: 40px;
+.carousel__buttons {
+    display: flex;
+    width: 100%;
+    height:8%;
+    max-height: 4vw;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    justify-content: space-between;
+    padding: 0 1.5vw;
+    z-index: 2;
+}
+
+.carousel__button {
+    font-weight: bold;
+    height: 100%;
+    width: 4%;
+    line-height: 4%;
     background-color: rgba(255, 255, 255, 20%);
     border: none;
     border-radius: 50%;
-    font-size: 3rem;
+    font-size: 5vw;
     cursor: pointer;
     text-align: center;
 }
 
-.carousel__button--next {
-    right: 1rem;
-}
-
-.carousel__button--prev {
-    left: 1rem;
-}
 
 .carousel__button:hover {
     background-color: rgba(255, 255, 255, 50%);
@@ -539,22 +540,6 @@ footer p {
         width: 100%;
     }
 
-    .carousel__button--next {
-        right: 0.5rem;
-    }
-
-    .carousel__button--prev {
-        left: 0.5rem;
-    }
-
-    .carousel__button {
-        top: 50%;
-        height: 35px;
-        width: 35px;
-        line-height: 35px;
-        font-size: 2.5rem;
-    }
-    
 
     .section-one__green {
         display: flex;
@@ -708,24 +693,10 @@ footer p {
         height: fit-content;
     }
 
-    .carousel__button--next {
-        right: 0.5rem;
-    }
-
-    .carousel__button--prev {
-        left: 0.5rem;
-    }
-
-    .carousel__button {
-        height: 25px;
-        width: 25px;
-        line-height: 25px;
-        font-size: 2rem;
-    }
-
     .carousel__indicators__container {
         margin: 0;
     }
+
     .section-one__no-index {
         margin-top: 10vh;
     }
