@@ -199,14 +199,15 @@ li {
 }
 
 .carousel__indicators {
+    display:flex;
     position: absolute;
-    display: block;
-    height: fit-content;
+    height: 100%;
     width: fit-content;
     z-index: 1;
-    top: 95%;
     right: 50%;
     transform: translateX(50%);
+    align-items: flex-end;
+    padding:20px;
 }
 
 .carousel__indicator {
@@ -537,9 +538,7 @@ footer p {
     }
     .carousel__indicators {
         position: absolute;
-        display: block;
-        top: 92%;
-        z-index: 1;
+        padding:15px;
     }
 
     .carousel__indicator {
@@ -704,9 +703,7 @@ footer p {
     }
     .carousel__indicators {
         position: absolute;
-        display: block;
-        top: 91%;
-        z-index: 1;
+        padding:10px
     }
 
     .carousel__indicator {
