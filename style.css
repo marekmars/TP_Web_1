@@ -216,13 +216,13 @@ li {
 .carousel__indicators-container {
     display: flex;
     gap: 2%;
-    height: 5%;
+    height: 4%;
     width: 100%;
     justify-content: center;
 }
 
 .carousel__indicator {
-    width: 3.3%;
+    width: 2.7%;
     object-position: center;
     height: 100%;
     border: none;
