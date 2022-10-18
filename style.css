@@ -56,21 +56,11 @@ select {
 /*FIN RESET*/
 
 /*Estilo nav*/
-
-.nav__logo {
-    display: flex;
-    position: relative;
-}
-
-.nav__logo img {
-    width: 20vh;
-}
-
 nav {
     display: flex;
     position: fixed;
     top: 0;
-    z-index: 2;
+    z-index: 3;
     width: 100%;
     align-items: center;
     justify-content: space-between;
@@ -86,6 +76,7 @@ nav {
     align-items: center;
 }
 
+
 .nav__links a {
     color: #1B5D3F;
     font-weight: 500;
@@ -95,6 +86,10 @@ nav {
     display: inline-block;
 }
 
+.nav__links a:hover {
+    transform: scale(110%);
+}
+
 li {
     list-style: none;
 }
@@ -102,6 +97,8 @@ li {
 .nav__burger {
     align-self: center;
     display: none;
+    cursor: pointer;
+    z-index: 5;
 }
 
 .nav__burger div {
@@ -111,11 +108,15 @@ li {
     height: 0.4rem;
     margin: 0.5rem;
     transition: all 0.5s ease;
-
 }
 
-.nav__links a:hover {
-    transform: scale(110%);
+.nav__logo {
+    display: flex;
+    position: relative;
+}
+
+.nav__logo img {
+    width: 20vh;
 }
 
 /*Fin Estilo Nav*/
@@ -457,10 +458,14 @@ footer p {
 
 
 /*Horizontal celus-tablet */
-@media (min-width: 501px) and (max-width: 1023px) {
 
+@media (min-width: 501px) and (max-width: 1023px) {
+    /*Nav*/
+    nav {
+        height: 10vh;
+        padding: 9px;
+    }
     .nav__links {
-        display: flex;
         position: absolute;
         right: 0;
         height: 90vh;
@@ -475,28 +480,16 @@ footer p {
     }
 
     .nav__links a {
-        color: #1B5D3F;
-        font-size: 1.5rem;
-        font-weight: 600;
-        padding: 30px;
+        font-size: 1.3rem;
+        padding: 25px 0;
     }
 
-    nav {
-        top: 0;
-        position: fixed;
-        background-color: #b9bbb2;
-        display: flex;
-        justify-content: space-between;
-        z-index: 3;
-        width: 100%;
-        height: 10vh;
-        padding: 9px;
+    .nav__links a:hover {
+        transform: none;
     }
 
     .nav__burger {
         display: block;
-        cursor: pointer;
-        z-index: 5;
     }
 
     .nav__burger div {
@@ -506,7 +499,6 @@ footer p {
     }
 
     .nav__logo {
-        display: flex;
         z-index: 5;
         align-self: center;
         width: fit-content;
@@ -531,6 +523,8 @@ footer p {
     .animateB .line3 {
         transform: rotate(45deg) translate(-5px, -6px);
     }
+
+    /*Carousel*/
 
     .carousel {
         margin-top: 10vh;
@@ -613,9 +607,13 @@ footer p {
 
 /*Vertical celus*/
 @media (max-width: 501px) {
+    /*Nav*/
+    nav {
+        height: 10vh;
+        padding: 9px;
+    }
 
     .nav__links {
-        display: flex;
         position: absolute;
         right: 0;
         height: 90vh;
@@ -630,28 +628,16 @@ footer p {
     }
 
     .nav__links a {
-        color: #1B5D3F;
-        font-size: 1.5rem;
-        font-weight: 600;
-        padding: 30px;
+        font-size: 1rem;
+        padding: 20px 0;
     }
 
-    nav {
-        top: 0;
-        position: fixed;
-        background-color: #b9bbb2;
-        display: flex;
-        justify-content: space-between;
-        z-index: 3;
-        width: 100%;
-        height: 10vh;
-        padding: 9px;
+    .nav__links a:hover {
+        transform: none;
     }
 
     .nav__burger {
         display: block;
-        cursor: pointer;
-        z-index: 5;
     }
 
     .nav__burger div {
@@ -660,8 +646,7 @@ footer p {
         margin: 5px;
     }
 
-    .nav__logo {
-        display: flex;
+    .nav__logo {;
         z-index: 5;
         align-self: center;
         width: fit-content;
@@ -687,10 +672,10 @@ footer p {
         transform: rotate(45deg) translate(-5px, -6px);
     }
 
+    /*Carousel*/
+
     .carousel {
-        display: flex;
         margin-top: 10vh;
-        height: fit-content;
     }
 
     .carousel__indicators__container {
