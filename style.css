@@ -455,6 +455,9 @@ section img {
     display: flex;
     flex-flow: wrap row;
 }
+.map-style {
+    border:none;
+}
 
 footer p {
     background-color: #b9bbb2;
