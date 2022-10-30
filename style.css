@@ -307,6 +307,10 @@ li {
     background-color: #d9d9d9;
 }
 
+.section-one__no-index img{
+height:100vh;
+}
+
 .contacto {
     display: flex;
     flex-flow: nowrap column;
