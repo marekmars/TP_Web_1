@@ -308,7 +308,14 @@ li {
 }
 
 .section-one__no-index img{
-height:100vh;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+    position: relative;
 }
 
 .contacto {
