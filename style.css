@@ -301,7 +301,7 @@ li {
 
 .section-one__grey {
     display: flex;
-    padding: 0px 10px 10px 10px;
+    padding: 0 10px 10px 10px;
     flex-direction: row;
     justify-content: space-around;
     background-color: #d9d9d9;
@@ -383,8 +383,6 @@ li {
     border: none;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
 }
 
 .form.area {
@@ -405,10 +403,7 @@ li {
     border: 2px solid #b9bbb2;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
-    -ms-border-radius: 50px;
-    -o-border-radius: 50px;
     margin-bottom: 20px;
-    cursor: pointer;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 
 }
@@ -426,10 +421,6 @@ section img {
     opacity: 0;
     transform: translateY(25px);
     position: absolute;
-    -webkit-transform: translateY(25px);
-    -moz-transform: translateY(25px);
-    -ms-transform: translateY(25px);
-    -o-transform: translateY(25px);
     color: green;
     font-size: 1.5rem;
     font-weight: 600;
@@ -439,10 +430,6 @@ section img {
     opacity: 0;
     transform: translateY(25px);
     position: absolute;
-    -webkit-transform: translateY(25px);
-    -moz-transform: translateY(25px);
-    -ms-transform: translateY(25px);
-    -o-transform: translateY(25px);
     color: red;
     font-size: 1.5rem;
     font-weight: 600;
@@ -474,6 +461,15 @@ section img {
     width: 95%;
     object-position: center;
     height: 50vh;
+
+}
+
+.footer__map iframe {
+    height:100%;
+    width:100%;
+    border:0;
+filter: grayscale(80%);
+
 }
 
 .footer__text {
