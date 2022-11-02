@@ -1,55 +1,65 @@
-const carouselSlide = () => {
-    //definicion de constantes
-    let slidePosition = 0;
-    const slides = document.getElementsByClassName("carousel__img");
-    const totalSlides = slides.length - 1;
-    /*console.log(totalSlides);*/
-    const pButton = document.querySelector(".carousel__button--prev");
-    const nButton = document.querySelector(".carousel__button--next");
-    const carouselIndicators = document.getElementsByClassName("carousel__indicator");
-    const dots=Array.from(carouselIndicators);
+const img1 = document.getElementById("img1");
+const img2 = document.getElementById("img2");
+let slide = 0;
+const pButton = document.querySelector(".carousel__button--prev");
+const nButton = document.querySelector(".carousel__button--next");
+const carouselIndicators = document.getElementsByClassName("carousel__indicator");
+const dots = Array.from(carouselIndicators);
 
-    //mover slides para adelante
-    pButton.addEventListener("click", (e) => {
-        if (slidePosition === 0) {
-            slidePosition = totalSlides;
-        } else {
-            slidePosition--;
-        };
-        moveSlide();
-    })
-    //mover slides para atras
-    nButton.addEventListener("click", (e) => {
-        if (slidePosition === totalSlides) {
-            slidePosition = 0;
-        } else {
-            slidePosition++;
-        }
-        moveSlide();
-    })
-    //cambio de clase indicadores + accion botones de los mismos
-    const carouselIndicatorsClick = () => {
-        for (let i = 0; i <dots.length ; i++) {
-            dots[i].addEventListener("click", evt => {
-                //se le asigna el valor de i del boton apretado a slideposition
-                slidePosition=i;
-                moveSlide();
-            })
-        }
-    }
-//cambio de clase
-    function moveSlide() {
-        for (let slide of slides) {
-            slide.classList.remove("carousel__img-visible");
-        }
-        for (let dot of carouselIndicators) {
-            dot.classList.remove("carousel__indicator__active");
-        }
-        carouselIndicators[slidePosition].classList.add("carousel__indicator__active");
-        slides[slidePosition].classList.add("carousel__img-visible");
-        slides[slidePosition].classList.add("slideAnimation");
-    }
+let carousel = ["https://ingyrial.sirv.com/Images/Roullier/imgCarousel1.webp",
+    "https://ingyrial.sirv.com/Images/Roullier/imgCarousel2.webp",
+    "https://ingyrial.sirv.com/Images/Roullier/imgCarousel3.webp",
+    "https://ingyrial.sirv.com/Images/Roullier/imgCarousel4.webp",
+    "https://ingyrial.sirv.com/Images/Roullier/imgCarousel5.webp",
+    "https://ingyrial.sirv.com/Images/Roullier/imgCarousel6.webp",
+    "https://ingyrial.sirv.com/Images/Roullier/imgCarousel7.webp",
+    "https://ingyrial.sirv.com/Images/Roullier/imgCarousel8.webp"];
 
-    carouselIndicatorsClick();
+img1.style.position = "absolute";
+img2.style.position = "relative";
+const slideAnimation=()=> {
+    img1.classList.toggle("carousel__hidden");
+    img2.classList.toggle("carousel__hidden");
+    img1.src = carousel[slide];
+    img2.src = carousel[slide];
+    img1.classList.toggle("slideAnimation");
+    img2.classList.toggle("slideAnimation");
+    dots[slide].classList.add("carousel__indicator__active");
 }
-carouselSlide();
+const moveSlide = () => {
+    nButton.addEventListener("click", (e) => {
+
+
+        if (slide === carousel.length - 1) {
+            slide = 0;
+            dots[carousel.length - 1].classList.remove("carousel__indicator__active");
+        } else {
+            slide++;
+            dots[slide - 1].classList.remove("carousel__indicator__active")
+        }
+
+        slideAnimation();
+    })
+    pButton.addEventListener("click", (e) => {
+        if (slide === 0) {
+            slide = carousel.length - 1;
+            dots[0].classList.remove("carousel__indicator__active");
+        } else {
+            slide--;
+            dots[slide + 1].classList.remove("carousel__indicator__active")
+        }
+        slideAnimation();
+    })
+
+    dots.forEach(function (d,i) {
+
+        d.addEventListener("click", (e) => {
+            let prevSlide=slide;
+            slide=i;
+            dots[prevSlide].classList.remove("carousel__indicator__active");
+            slideAnimation();
+        })
+
+    })
+};
+moveSlide();

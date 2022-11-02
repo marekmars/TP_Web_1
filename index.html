@@ -48,32 +48,11 @@
 <main id="start" class="main">
 	  
 	  <div class="carousel">
-			<ul class="carousel__track">
-				  <li class="carousel__img carousel__img-visible">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel1.webp" alt=""/>
-				  </li>
-				  <li class="carousel__img">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel2.webp" alt=""/>
-				  </li>
-				  <li class="carousel__img">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel3.webp" alt=""/>
-				  </li>
-				  <li class="carousel__img">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel4.webp" alt=""/>
-				  </li>
-				  <li class="carousel__img">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel5.webp" alt=""/>
-				  </li>
-				  <li class="carousel__img">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel6.webp" alt=""/>
-				  </li>
-				  <li class="carousel__img">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel7.webp" alt=""/>
-				  </li>
-				  <li class="carousel__img">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel8.webp" alt=""/>
-				  </li>
-			</ul>
+			<div class="carousel__track">
+				  <img class="carousel__img slideAnimation" id="img1" src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel1.webp" alt=""/>
+				  <img class="carousel__img carousel__hidden" id="img2" src="https://ingyrial.sirv.com/Images/Roullier/imgCarousel1.webp" alt=""/>
+			</div>
+		
 			<div class="carousel__buttons">
 				  <button class="carousel__button carousel__button--prev">
 						&#171;
@@ -188,8 +167,7 @@
 	  </div>
 
 </footer>
-
-<script src="app.js"></script>
 <script src="carousel.js"></script>
+<script src="app.js"></script>
 </body>
 </html>

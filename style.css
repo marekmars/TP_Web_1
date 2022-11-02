@@ -511,6 +511,28 @@ footer p {
     align-self: center;
 }
 
+  .fa-badge-check{
+      width: 25vh;
+      height: 25vh;
+  }
+  .confirmacion-formulario{
+      margin-top:30vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+  }
+.confirmacion-formulario p{
+      font-size:2rem;
+  }
+.confirmacion-formulario h1{
+    font-size:3rem;
+  }
+.confirmacion-formulario__ico{
+    width: 20vh;
+    margin-bottom:10vh;
+  fill:darkolivegreen;
+}
 
 
 @media (min-width: 1023px) {

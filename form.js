@@ -82,5 +82,9 @@ form.addEventListener("submit", (e) => {
         verificationEmpty(errorMsg[4]);
  /*       console.log("Error");*/
         e.preventDefault();
+    }    else{
+        setTimeout(function () {
+            window.location.href = "index.html";
+        }, 2000);
     }
 });
