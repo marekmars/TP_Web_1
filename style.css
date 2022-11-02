@@ -139,13 +139,14 @@ li {
 .nav__logo img {
     width: 20vh;
 }
-
+ #img2{
+     position: absolute;
+ }
 .nav__logo__movil {
     display: none;
 }
 
 /*Fin Estilo Nav*/
-
 /*Carousel Style*/
 .carousel {
     display: flex;
@@ -170,7 +171,7 @@ li {
 .carousel__track img {
     display: block;
     position:relative;
-   min-width:100vw;
+    min-width:100vw;
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -181,6 +182,12 @@ li {
     display: block;
 }
 
+.carousel__img-visible {
+    display: block;
+}
+ .carousel__hidden{
+     opacity:0;
+ }
 .slideAnimation {
     animation: slide 1.5s;
 }
@@ -511,29 +518,28 @@ footer p {
     align-self: center;
 }
 
-  .fa-badge-check{
-      width: 25vh;
-      height: 25vh;
-  }
-  .confirmacion-formulario{
-      margin-top:30vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+.fa-badge-check{
+    width: 25vh;
+    height: 25vh;
+}
+.confirmacion-formulario{
+    margin-top:30vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-  }
+}
 .confirmacion-formulario p{
-      font-size:2rem;
-  }
+    font-size:2rem;
+}
 .confirmacion-formulario h1{
     font-size:3rem;
-  }
+}
 .confirmacion-formulario__ico{
     width: 20vh;
     margin-bottom:10vh;
-  fill:darkolivegreen;
+    fill:darkolivegreen;
 }
-
 
 @media (min-width: 1023px) {
     .card__txt:hover {
