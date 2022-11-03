@@ -157,7 +157,12 @@ li {
     overflow: hidden;
     background-color: #d9d9d9;
 }
-
+#img2{
+  position: relative;
+}
+#img1{
+  position: absolute;
+}
 .carousel__img {
     display: none;
     overflow: hidden;
@@ -170,7 +175,6 @@ li {
 
 .carousel__track img {
     display: block;
-    position:relative;
     min-width:100vw;
     width: 100%;
     height: 100%;

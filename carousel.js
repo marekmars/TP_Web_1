@@ -15,8 +15,7 @@ let carousel = ["https://ingyrial.sirv.com/Images/Roullier/imgCarousel1.webp",
     "https://ingyrial.sirv.com/Images/Roullier/imgCarousel7.webp",
     "https://ingyrial.sirv.com/Images/Roullier/imgCarousel8.webp"];
 
-img1.style.position = "absolute";
-img2.style.position = "relative";
+
 const slideAnimation=()=> {
     img1.classList.toggle("carousel__hidden");
     img2.classList.toggle("carousel__hidden");
@@ -28,7 +27,6 @@ const slideAnimation=()=> {
 }
 const moveSlide = () => {
     nButton.addEventListener("click", (e) => {
-
 
         if (slide === carousel.length - 1) {
             slide = 0;
