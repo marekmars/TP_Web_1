@@ -25,11 +25,11 @@ let verificationOk = (i) => {
     flag = true;
 };
 
-let verificationEmpty = (x) => {
+let verificationEmpty = (x,o) => {
     arrayForm.forEach((element, i) => {
         if (element.value === "") {
             okIcon[i].style.opacity = "0";
-            wrongIcon[i].style.opacity = "0";
+            wrongIcon[i].style.opacity = o;
             error[i].innerText = x;
             flag = false;
         }
@@ -53,7 +53,7 @@ form.addEventListener("change", (e) => {
         }
     }
 
-    if (isNaN(arrayForm[2].value) || arrayForm[2].value.length < 8) {
+    if (isNaN(arrayForm[2].value) || arrayForm[2].value.length < 8||arrayForm[2].value.length>20) {
         verificationWrong(2);
     } else {
         verificationOk(2);
@@ -73,13 +73,23 @@ form.addEventListener("change", (e) => {
         verificationOk(3);
     }
     let x = "";
-    verificationEmpty(x);
+    arrayForm.forEach((element, i) => {
+        if (element.value === "") {
+            okIcon[i].style.opacity = "0";
+            wrongIcon[i].style.opacity = "0";
+            error[i].innerText = x;
+            flag = false;
+        }
+    });
+    verificationEmpty(x,0);
 /*    console.log(flag);*/
 });
 
 form.addEventListener("submit", (e) => {
     if (!flag) {
-        verificationEmpty(errorMsg[4]);
+
+        verificationEmpty(errorMsg[4],1);
+
  /*       console.log("Error");*/
         e.preventDefault();
     }
