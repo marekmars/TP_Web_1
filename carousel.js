@@ -1,5 +1,4 @@
-const img1 = document.getElementById("img1");
-const img2 = document.getElementById("img2");
+const img = document.getElementById("img");
 let slide = 0;
 const pButton = document.querySelector(".carousel__button--prev");
 const nButton = document.querySelector(".carousel__button--next");
@@ -17,12 +16,7 @@ let carousel = ["https://ingyrial.sirv.com/Images/Roullier/imgCarousel1.webp",
 
 
 const slideAnimation=()=> {
-    img1.classList.toggle("carousel__hidden");
-    img2.classList.toggle("carousel__hidden");
-    img1.src = carousel[slide];
-    img2.src = carousel[slide];
-    img1.classList.toggle("slideAnimation");
-    img2.classList.toggle("slideAnimation");
+    img.src = carousel[slide];
     dots[slide].classList.add("carousel__indicator__active");
 }
 const moveSlide = () => {
