@@ -1,24 +1,28 @@
 //creacion de array con elementos p creados con document.createElement
 const error = [document.createElement("p"), document.createElement("p"),
     document.createElement("p"), document.createElement("p")];
-//creacion de array con las listas dnd se encuentran las li dnd se les agregara el p
+//creacion de array con las listas dnd se encuentran las li dnd se les agregara el p con el error y se utilizara para sacar los valores del input
 const formLi=[document.getElementById("liNombre"),document.getElementById("liEmail"),
     document.getElementById("liTel"),document.getElementById("liMsg")];
+//obtencion del elemnto confirmacion que se mostrara cuando el form sea llenado de manera correcta y enviado
 const formConfimacion = document.getElementById("confirmacion-formulario")
+//creacion de array con elementos li dnd se insertaran los valores obtenidpo luego de hbaer enviado correctamente el formulario
 const arrayConfirmacion = [document.getElementById("confirmacion-formulario__nombre"), document.getElementById("confirmacion-formulario__email")
     , document.getElementById("confirmacion-formulario__tel"), document.getElementById("confirmacion-formulario__msg")];
-const arrayForm = [document.getElementById("name"), document.getElementById("email"),
-    document.getElementById("phone"), document.getElementById("msg")];
+//obtencion del elemnto form
 const form = document.getElementById("formu");
+//obtencion de los iconos ok
 const okIcon = document.getElementsByClassName("fa-circle-check");
+//obtencion de los iconos wrong
 const wrongIcon = document.getElementsByClassName("fa-circle-xmark");
-
+//creacion de banderas para confirmar que el formulario se lleno correctamente y se pueda enviar el formu
 let flags= [flag1=false,flag2= false,flag3= false,flag4 = false];
 
-
+//agregado de la clase error a los elementos p creados
 formLi.forEach(x=> {
     x.classList.add("error");
 })
+//setiando un array con los mensejes de error
 const errorMsg = [
     "El nombre no puede superara los 30 caracteres",
     "Ingrese un mail correcto",
@@ -26,7 +30,7 @@ const errorMsg = [
     "El mensaje no puede superara los 300 caracteres",
     "El campo no puede estar vacio"
 ];
-
+//funcion que se ejecuta si lo verificado es correcto y setea el css para campo correcto
 let verificationOk = (i) => {
     flags[i] = true;
     error[i].innerText = "";
@@ -34,11 +38,11 @@ let verificationOk = (i) => {
     okIcon[i].style.opacity = "1";
 
 };
-
+//funcion que se ejecuta algun campo esta vacio y setea el css a default y mensaje para avisar q esta vacio
 let verificationEmpty = (x, o) => {
- 
-    arrayForm.forEach((element, i) => {
-        if (element.value === "") {
+
+    formLi.forEach((element, i) => {
+        if (element.firstElementChild.value === "") {
             okIcon[i].style.opacity = "0";
             wrongIcon[i].style.opacity = o;
             error[i].innerHTML = x;
@@ -51,7 +55,7 @@ let verificationEmpty = (x, o) => {
         }
     });
 };
-
+//funcion que se ejecuta si lo verificado es incorrecto y setea el css para campo incorrecto
 let verificationWrong = (i) => {
     flags[i] = false;
     error[i].innerHTML = errorMsg[i];
@@ -60,18 +64,20 @@ let verificationWrong = (i) => {
     okIcon[i].style.opacity = "0";
        console.log(" verificationWrong");
 };
-
+ //evento para escuchar cualquier cambio q se realice en el formulario y utilizar la funcion adecuada
 form.addEventListener("change", (e) => {
 
     for (let i = 0; i < 3; i++) {
-        if (arrayForm[i].value.length > 30) {
+
+        if (formLi[i].firstElementChild.value.length > 30) {
             verificationWrong(i);
+
         } else {
             verificationOk(i);
         }
     }
-
-    if (isNaN(arrayForm[2].value) || arrayForm[2].value.length < 8 || arrayForm[2].value.length > 20) {
+    console.log(formLi[2].firstElementChild.value.length);
+    if (isNaN(formLi[2].firstElementChild.value) || formLi[2].firstElementChild.value.length < 8 || formLi[2].firstElementChild.value.length > 20) {
         verificationWrong(2);
 
     } else {
@@ -79,16 +85,15 @@ form.addEventListener("change", (e) => {
         verificationOk(2);
     }
 
-    if (
-        !arrayForm[1].value.includes("@") ||
-        !arrayForm[1].value.includes(".com")
+    if (!formLi[1].firstElementChild.value.includes("@") ||
+        !formLi[1].firstElementChild.value.includes(".com")
     ) {
         verificationWrong(1);
     } else {
         verificationOk(1);
 
     }
-    if (arrayForm[3].value.length > 300) {
+    if (formLi[3].firstElementChild.value.length > 300) {
         verificationWrong(3);
 
     } else {
@@ -96,8 +101,8 @@ form.addEventListener("change", (e) => {
         verificationOk(3);
     }
     let x = "";
-    arrayForm.forEach((element, i) => {
-        if (element.value === "") {
+    formLi.forEach((element, i) => {
+        if (element.firstElementChild.value === "") {
             okIcon[i].style.opacity = "0";
             wrongIcon[i].style.opacity = "0";
             error[i].innerText = x;
@@ -110,7 +115,8 @@ form.addEventListener("change", (e) => {
           console.log(flag);
       })
 });
-
+//evento para subit del formulario, setiado en e.preventDefault para q nunca se largue ya que todavia no esta hecho el backend en php
+//si el formulario es correcto se oculta el formulario y se descoulta un div que mustra mensaje enviado y los datos del formulario
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -119,13 +125,8 @@ form.addEventListener("submit", (e) => {
         verificationEmpty(errorMsg[4], 1);
          return false;
 
-    }
-
-    if(flags[0]&&flags[1]&&flags[2]&&flags[3]){
-
-
-        e.preventDefault();
-        for (let i = 0; i < arrayForm.length; i++) {
+    } else {
+        for (let i = 0; i < formLi.length; i++) {
             let labelName;
             switch (i) {
                 case 0:
@@ -141,8 +142,8 @@ form.addEventListener("submit", (e) => {
                     labelName = "Mensaje: ";
                     break;
             }
-            arrayConfirmacion[i].innerHTML = labelName + arrayForm[i].value;
-
+            arrayConfirmacion[i].innerHTML = labelName + formLi[i].firstElementChild.value;
+                
             form.classList.add("hiddenForm");
             formConfimacion.classList.remove("hiddenForm");
         }
