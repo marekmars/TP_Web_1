@@ -13,7 +13,8 @@ const form = document.getElementById("formu");
 const okIcon = document.getElementsByClassName("fa-circle-check");
 const wrongIcon = document.getElementsByClassName("fa-circle-xmark");
 
-let flag = false;
+let flags= [flag1=false,flag2= false,flag3= false,flag4 = false];
+
 
 formLi.forEach(x=> {
     x.classList.add("error");
@@ -27,13 +28,15 @@ const errorMsg = [
 ];
 
 let verificationOk = (i) => {
+    flags[i] = true;
     error[i].innerText = "";
     wrongIcon[i].style.opacity = "0";
     okIcon[i].style.opacity = "1";
-    flag = true;
+
 };
 
 let verificationEmpty = (x, o) => {
+ 
     arrayForm.forEach((element, i) => {
         if (element.value === "") {
             okIcon[i].style.opacity = "0";
@@ -42,20 +45,20 @@ let verificationEmpty = (x, o) => {
             /* console.log(x);*/
             formLi[i].appendChild(error[i]);
             console.log(error[i].innerText);
-            /*  console.log(x);*/
+              console.log(x);
             /*error[i].innerText = x;*/
-            flag = false;
+
         }
     });
 };
 
 let verificationWrong = (i) => {
-    let p = document.createElement("p");
-    p.innerHTML = errorMsg[i];
-    error[i].appendChild(p);
+    flags[i] = false;
+    error[i].innerHTML = errorMsg[i];
+    formLi[i].appendChild(error[i]);
     wrongIcon[i].style.opacity = "1";
     okIcon[i].style.opacity = "0";
-    flag = false;
+       console.log(" verificationWrong");
 };
 
 form.addEventListener("change", (e) => {
@@ -70,7 +73,9 @@ form.addEventListener("change", (e) => {
 
     if (isNaN(arrayForm[2].value) || arrayForm[2].value.length < 8 || arrayForm[2].value.length > 20) {
         verificationWrong(2);
+
     } else {
+
         verificationOk(2);
     }
 
@@ -81,10 +86,13 @@ form.addEventListener("change", (e) => {
         verificationWrong(1);
     } else {
         verificationOk(1);
+
     }
     if (arrayForm[3].value.length > 300) {
         verificationWrong(3);
+
     } else {
+
         verificationOk(3);
     }
     let x = "";
@@ -93,21 +101,29 @@ form.addEventListener("change", (e) => {
             okIcon[i].style.opacity = "0";
             wrongIcon[i].style.opacity = "0";
             error[i].innerText = x;
-            flag = false;
+            flags[i] = false;
+
         }
     });
     verificationEmpty(x, 0);
+      flags.forEach((flag, i) => {
+          console.log(flag);
+      })
 });
 
 form.addEventListener("submit", (e) => {
+    e.preventDefault();
 
-
-    if (!flag) {
+    if (!flags[0]||!flags[1]||!flags[2]||!flags[3]) {
 
         verificationEmpty(errorMsg[4], 1);
-        e.preventDefault();
+         return false;
 
-    } else {
+    }
+
+    if(flags[0]&&flags[1]&&flags[2]&&flags[3]){
+
+
         e.preventDefault();
         for (let i = 0; i < arrayForm.length; i++) {
             let labelName;
