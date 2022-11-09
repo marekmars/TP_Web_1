@@ -189,7 +189,7 @@ li {
 .carousel__img-visible {
     display: block;
 }
- .carousel__hidden{
+ .hidden{
      opacity:0;
  }
 .slideAnimation {
@@ -527,7 +527,7 @@ footer p {
     height: 25vh;
 }
 .confirmacion-formulario{
-    margin-top:30vh;
+margin-top:auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -543,6 +543,9 @@ footer p {
     width: 20vh;
     margin-bottom:10vh;
     fill:darkolivegreen;
+}
+.hiddenForm{
+    display: none;
 }
 
 @media (min-width: 1023px) {

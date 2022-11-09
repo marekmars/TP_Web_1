@@ -2,7 +2,12 @@ const nombre = document.getElementById("name");
 const email = document.getElementById("email");
 const phone = document.getElementById("phone");
 const msg = document.getElementById("msg");
-
+const nombreV = document.getElementById("confirmacion-formulario__nombre");
+const emailV = document.getElementById("confirmacion-formulario__email");
+const phoneV = document.getElementById("confirmacion-formulario__tel");
+const msgV = document.getElementById("confirmacion-formulario__msg");
+const formConfimacion = document.getElementById("confirmacion-formulario")
+const arrayConfirmacion=[nombreV,emailV,phoneV,msgV];
 const arrayForm = [nombre, email, phone, msg];
 const form = document.getElementById("formu");
 const error = document.getElementsByClassName("error");
@@ -92,5 +97,31 @@ form.addEventListener("submit", (e) => {
 
  /*       console.log("Error");*/
         e.preventDefault();
+    }     else{
+        e.preventDefault();
+        /*nombreV.innerText =arrayForm[0].value;*/
+        for (let i = 0; i < arrayForm.length; i++) {
+             let labelName;
+            switch(i) {
+                case 0:
+                    labelName = "Nombre: ";
+                    break;
+                case 1:
+                    labelName = "Email: ";
+                    break;
+                case 2:
+                    labelName = "Telefono: : ";
+                    break;
+                case 3:
+                    labelName = "Mensaje: ";
+                    break;
+            }
+                        arrayConfirmacion[i].innerHTML=labelName + arrayForm[i].value;
+                        
+             form.classList.add("hiddenForm");
+             formConfimacion.classList.remove("hiddenForm");
+        }
+
     }
+
 });
