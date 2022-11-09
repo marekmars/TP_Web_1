@@ -1,20 +1,23 @@
-const nombre = document.getElementById("name");
-const email = document.getElementById("email");
-const phone = document.getElementById("phone");
-const msg = document.getElementById("msg");
-const nombreV = document.getElementById("confirmacion-formulario__nombre");
-const emailV = document.getElementById("confirmacion-formulario__email");
-const phoneV = document.getElementById("confirmacion-formulario__tel");
-const msgV = document.getElementById("confirmacion-formulario__msg");
+//creacion de array con elementos p creados con document.createElement
+const error = [document.createElement("p"), document.createElement("p"),
+    document.createElement("p"), document.createElement("p")];
+//creacion de array con las listas dnd se encuentran las li dnd se les agregara el p
+const formLi=[document.getElementById("liNombre"),document.getElementById("liEmail"),
+    document.getElementById("liTel"),document.getElementById("liMsg")];
 const formConfimacion = document.getElementById("confirmacion-formulario")
-const arrayConfirmacion=[nombreV,emailV,phoneV,msgV];
-const arrayForm = [nombre, email, phone, msg];
+const arrayConfirmacion = [document.getElementById("confirmacion-formulario__nombre"), document.getElementById("confirmacion-formulario__email")
+    , document.getElementById("confirmacion-formulario__tel"), document.getElementById("confirmacion-formulario__msg")];
+const arrayForm = [document.getElementById("name"), document.getElementById("email"),
+    document.getElementById("phone"), document.getElementById("msg")];
 const form = document.getElementById("formu");
-const error = document.getElementsByClassName("error");
 const okIcon = document.getElementsByClassName("fa-circle-check");
 const wrongIcon = document.getElementsByClassName("fa-circle-xmark");
+
 let flag = false;
 
+formLi.forEach(x=> {
+    x.classList.add("error");
+})
 const errorMsg = [
     "El nombre no puede superara los 30 caracteres",
     "Ingrese un mail correcto",
@@ -30,19 +33,26 @@ let verificationOk = (i) => {
     flag = true;
 };
 
-let verificationEmpty = (x,o) => {
+let verificationEmpty = (x, o) => {
     arrayForm.forEach((element, i) => {
         if (element.value === "") {
             okIcon[i].style.opacity = "0";
             wrongIcon[i].style.opacity = o;
-            error[i].innerText = x;
+            error[i].innerHTML = x;
+            /* console.log(x);*/
+            formLi[i].appendChild(error[i]);
+            console.log(error[i].innerText);
+            /*  console.log(x);*/
+            /*error[i].innerText = x;*/
             flag = false;
         }
     });
 };
 
 let verificationWrong = (i) => {
-    error[i].innerText = errorMsg[i];
+    let p = document.createElement("p");
+    p.innerHTML = errorMsg[i];
+    error[i].appendChild(p);
     wrongIcon[i].style.opacity = "1";
     okIcon[i].style.opacity = "0";
     flag = false;
@@ -58,7 +68,7 @@ form.addEventListener("change", (e) => {
         }
     }
 
-    if (isNaN(arrayForm[2].value) || arrayForm[2].value.length < 8||arrayForm[2].value.length>20) {
+    if (isNaN(arrayForm[2].value) || arrayForm[2].value.length < 8 || arrayForm[2].value.length > 20) {
         verificationWrong(2);
     } else {
         verificationOk(2);
@@ -72,9 +82,9 @@ form.addEventListener("change", (e) => {
     } else {
         verificationOk(1);
     }
-    if  (arrayForm[3].value.length>300)  {
+    if (arrayForm[3].value.length > 300) {
         verificationWrong(3);
-    }else{
+    } else {
         verificationOk(3);
     }
     let x = "";
@@ -86,23 +96,22 @@ form.addEventListener("change", (e) => {
             flag = false;
         }
     });
-    verificationEmpty(x,0);
-/*    console.log(flag);*/
+    verificationEmpty(x, 0);
 });
 
 form.addEventListener("submit", (e) => {
+
+
     if (!flag) {
 
-        verificationEmpty(errorMsg[4],1);
+        verificationEmpty(errorMsg[4], 1);
+        e.preventDefault();
 
- /*       console.log("Error");*/
+    } else {
         e.preventDefault();
-    }     else{
-        e.preventDefault();
-        /*nombreV.innerText =arrayForm[0].value;*/
         for (let i = 0; i < arrayForm.length; i++) {
-             let labelName;
-            switch(i) {
+            let labelName;
+            switch (i) {
                 case 0:
                     labelName = "Nombre: ";
                     break;
@@ -116,10 +125,10 @@ form.addEventListener("submit", (e) => {
                     labelName = "Mensaje: ";
                     break;
             }
-                        arrayConfirmacion[i].innerHTML=labelName + arrayForm[i].value;
-                        
-             form.classList.add("hiddenForm");
-             formConfimacion.classList.remove("hiddenForm");
+            arrayConfirmacion[i].innerHTML = labelName + arrayForm[i].value;
+
+            form.classList.add("hiddenForm");
+            formConfimacion.classList.remove("hiddenForm");
         }
 
     }

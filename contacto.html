@@ -26,7 +26,8 @@
 						<img src="https://ingyrial.sirv.com/Images/Roullier/roullier-logo-no-background.png" alt="Logo"
 						/></a>
 				  <a href="./index.html" class="nav__logo__movil">
-						<img src="https://ingyrial.sirv.com/Images/Roullier/roullier-logo-no-background-C.png" alt="Logo"
+						<img src="https://ingyrial.sirv.com/Images/Roullier/roullier-logo-no-background-C.png"
+							 alt="Logo"
 						/></a>
 			</div>
 			<ul class="nav__links">
@@ -51,7 +52,7 @@
 			<div class="section-one__grey contacto">
 				  <form action="" method="get" id="formu">
 						<ul class="section-one__grey__form">
-							  <li>
+							  <li id="liNombre">
 									<input
 											type="text"
 											id="name"
@@ -62,8 +63,7 @@
 									<i class="fa-regular fa-circle-xmark okIcon"></i>
 									<i class="fa-regular fa-circle-check wrongIcon"></i>
 							  </li>
-							  <li class="error"></li>
-							  <li>
+							  <li id="liEmail">
 									<input
 											type="email"
 											id="email"
@@ -75,8 +75,7 @@
 									<i class="fa-regular fa-circle-xmark"></i>
 									<i class="fa-regular fa-circle-check"></i>
 							  </li>
-							  <li class="error"></li>
-							  <li>
+							  <li id="liTel">
 									<input
 											type="tel"
 											id="phone"
@@ -89,7 +88,7 @@
 							  </li>
 							  <li class="error"></li>
 							  
-							  <li>
+							  <li id="liMsg">
                 <textarea
 						id="msg"
 						name="user_message"
@@ -100,7 +99,6 @@
 									<i class="fa-regular fa-circle-xmark"></i>
 									<i class="fa-regular fa-circle-check"></i>
 							  </li>
-							  <li class="error"></li>
 							  <button id="submit" class="form__btn" type="submit">Enviar</button>
 						</ul>
 				  </form>
@@ -113,10 +111,10 @@
 				  </h1>
 				  <p> Gracias por contactarte, nos comunicaremos con vos lo más pronto posible.</p>
 				  <ul class="confirmacion-formulario__datos">
-						<li id="confirmacion-formulario__nombre">Nombre: </li>
-						<li id="confirmacion-formulario__email">Email: </li>
-						<li id="confirmacion-formulario__tel">Tel: </li>
-						<li id="confirmacion-formulario__msg">Mensaje: </li>
+						<li id="confirmacion-formulario__nombre">Nombre:</li>
+						<li id="confirmacion-formulario__email">Email:</li>
+						<li id="confirmacion-formulario__tel">Tel:</li>
+						<li id="confirmacion-formulario__msg">Mensaje:</li>
 				  </ul>
 			</div>
 	  </section>
@@ -127,7 +125,7 @@
 			<div class="footer__text">
 				  <p>Ugarteche 3045 - CABA - De 7hs a 19 hs todos los días - roullier@gmail.com</p>
 			</div>
-		 
+			
 			<ul class="footer__social">
 				  <li>
 						<a href=""><i class="fa-brands fa-whatsapp fa-xl"></i></a
