@@ -46,12 +46,9 @@ let verificationEmpty = (x, o) => {
             okIcon[i].style.opacity = "0";
             wrongIcon[i].style.opacity = o;
             error[i].innerHTML = x;
-            /* console.log(x);*/
             formLi[i].appendChild(error[i]);
             console.log(error[i].innerText);
               console.log(x);
-            /*error[i].innerText = x;*/
-
         }
     });
 };
@@ -62,7 +59,6 @@ let verificationWrong = (i) => {
     formLi[i].appendChild(error[i]);
     wrongIcon[i].style.opacity = "1";
     okIcon[i].style.opacity = "0";
-       console.log(" verificationWrong");
 };
  //evento para escuchar cualquier cambio q se realice en el formulario y utilizar la funcion adecuada
 form.addEventListener("change", (e) => {
@@ -76,7 +72,6 @@ form.addEventListener("change", (e) => {
             verificationOk(i);
         }
     }
-    console.log(formLi[2].firstElementChild.value.length);
     if (isNaN(formLi[2].firstElementChild.value) || formLi[2].firstElementChild.value.length < 8 || formLi[2].firstElementChild.value.length > 20) {
         verificationWrong(2);
 
@@ -111,9 +106,6 @@ form.addEventListener("change", (e) => {
         }
     });
     verificationEmpty(x, 0);
-      flags.forEach((flag, i) => {
-          console.log(flag);
-      })
 });
 //evento para subit del formulario, setiado en e.preventDefault para q nunca se largue ya que todavia no esta hecho el backend en php
 //si el formulario es correcto se oculta el formulario y se descoulta un div que mustra mensaje enviado y los datos del formulario
@@ -127,19 +119,19 @@ form.addEventListener("submit", (e) => {
 
     } else {
         for (let i = 0; i < formLi.length; i++) {
-            let labelName;
+            let labelName="";
             switch (i) {
                 case 0:
-                    labelName = "Nombre: ";
+                    labelName = "<b>Nombre: </b>";
                     break;
                 case 1:
-                    labelName = "Email: ";
+                    labelName = "<b>Email: </b>";
                     break;
                 case 2:
-                    labelName = "Telefono: : ";
+                    labelName = "<b>Telefono: </b>";
                     break;
                 case 3:
-                    labelName = "Mensaje: ";
+                    labelName = "<b>Mensaje: </b>";
                     break;
             }
             arrayConfirmacion[i].innerHTML = labelName + formLi[i].firstElementChild.value;
