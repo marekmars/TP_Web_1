@@ -461,6 +461,9 @@ section img {
 .error {
     color: red;
 }
+.borderError{
+    border:2px solid red;
+}
 
 /*Fin estilo main*/
 /*Estilos footer*/

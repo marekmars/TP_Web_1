@@ -48,7 +48,8 @@ let verificationEmpty = (x, o) => {
             error[i].innerHTML = x;
             formLi[i].appendChild(error[i]);
             console.log(error[i].innerText);
-              console.log(x);
+            console.log(x);
+            formLi[i].firstElementChild.classList.remove("borderError");
         }
     });
 };
@@ -59,6 +60,7 @@ let verificationWrong = (i) => {
     formLi[i].appendChild(error[i]);
     wrongIcon[i].style.opacity = "1";
     okIcon[i].style.opacity = "0";
+
 };
  //evento para escuchar cualquier cambio q se realice en el formulario y utilizar la funcion adecuada
 form.addEventListener("change", (e) => {
@@ -67,33 +69,36 @@ form.addEventListener("change", (e) => {
 
         if (formLi[i].firstElementChild.value.length > 30) {
             verificationWrong(i);
-
+            formLi[i].firstElementChild.classList.add("borderError");
         } else {
             verificationOk(i);
+            formLi[i].firstElementChild.classList.remove("borderError");
         }
     }
     if (isNaN(formLi[2].firstElementChild.value) || formLi[2].firstElementChild.value.length < 8 || formLi[2].firstElementChild.value.length > 20) {
         verificationWrong(2);
-
+        formLi[2].firstElementChild.classList.add("borderError");
     } else {
-
         verificationOk(2);
+        formLi[2].firstElementChild.classList.remove("borderError");
     }
 
     if (!formLi[1].firstElementChild.value.includes("@") ||
         !formLi[1].firstElementChild.value.includes(".com")
     ) {
         verificationWrong(1);
+        formLi[1].firstElementChild.classList.add("borderError");
     } else {
         verificationOk(1);
-
+        formLi[1].firstElementChild.classList.remove("borderError");
     }
     if (formLi[3].firstElementChild.value.length > 300) {
         verificationWrong(3);
-
+        formLi[3].firstElementChild.classList.add("borderError");
     } else {
 
         verificationOk(3);
+        formLi[3].firstElementChild.classList.remove("borderError");
     }
     let x = "";
     formLi.forEach((element, i) => {
