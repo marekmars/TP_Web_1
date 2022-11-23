@@ -75,12 +75,14 @@ form.addEventListener("change", (e) => {
             formLi[i].firstElementChild.classList.remove("borderError");
         }
     }
-    if (isNaN(formLi[2].firstElementChild.value) || formLi[2].firstElementChild.value.length < 8 || formLi[2].firstElementChild.value.length > 20) {
-        verificationWrong(2);
-        formLi[2].firstElementChild.classList.add("borderError");
-    } else {
+    if (/^(?:(?:00)?549?)?0?(?:11|[2368]\d)(?:(?=\d{0,2}15)\d{2})??\d{8}$/.test(formLi[2].firstElementChild.value)) {
         verificationOk(2);
         formLi[2].firstElementChild.classList.remove("borderError");
+
+    } else {
+
+        verificationWrong(2);
+        formLi[2].firstElementChild.classList.add("borderError");
     }
 
     if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(formLi[1].firstElementChild.value)
