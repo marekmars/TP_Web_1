@@ -83,14 +83,14 @@ form.addEventListener("change", (e) => {
         formLi[2].firstElementChild.classList.remove("borderError");
     }
 
-    if (!formLi[1].firstElementChild.value.includes("@") ||
-        !formLi[1].firstElementChild.value.includes(".com")
+    if (/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i.test(formLi[1].firstElementChild.value)
     ) {
-        verificationWrong(1);
-        formLi[1].firstElementChild.classList.add("borderError");
-    } else {
         verificationOk(1);
         formLi[1].firstElementChild.classList.remove("borderError");
+
+    } else {
+        verificationWrong(1);
+        formLi[1].firstElementChild.classList.add("borderError");
     }
     if (formLi[3].firstElementChild.value.length > 300) {
         verificationWrong(3);
